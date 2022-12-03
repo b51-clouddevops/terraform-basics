@@ -37,6 +37,15 @@ output "ex-list-output" {
     value = "Welcome to ${var.ex-list[0]} ${var.ex-list[1]} Training and the total course duration is ${var.ex-list[2]} and the trainer name is ${var.ex-list[4]}"
 }
 
+# Map Variable 
+
+variable "ex-map" {
+    default = {
+        
+    }
+  
+}
+
 
 # A variable can be accessed without ${} only the variable is called. In case, if it's needed to be added with other strings or in between something, then we need to enclose them in
 # in the double quotes. Single quotes are not valid in terraform. 
