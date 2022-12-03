@@ -1,5 +1,7 @@
 variable "sample" {
-  default  = "Hello World"
+  default  = "Hello World"   # Declaring the variable
 }
 
-output "sample"
+output "sample" {
+    value = var.sample       # Printing the variable
+}
