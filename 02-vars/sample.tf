@@ -13,7 +13,11 @@ output "sample1" {
 
 variable "number" {
     default = 100 
-  }
+}
+
+output "number" {
+    value = var.number       # Printing the variable
+}
 
 
 # A variable can be accessed without ${} only the variable is called. In case, if it's needed to be added with other strings or in between something, then we need to enclose them in
