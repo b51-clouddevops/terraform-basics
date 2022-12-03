@@ -33,7 +33,9 @@ variable "ex-list" {
   ]
 }
 
-output "ex-list-output"
+output "ex-list-output" {
+    value = "Welcome to ${var.ex-list[0] }"
+}
 
 
 # A variable can be accessed without ${} only the variable is called. In case, if it's needed to be added with other strings or in between something, then we need to enclose them in
