@@ -34,7 +34,7 @@ variable "ex-list" {
 }
 
 output "ex-list-output" {
-    value = "Welcome to ${var.ex-list[0]} ${var.ex-list[1]} Training and the total course duration is ${var.ex-list[2]}"
+    value = "Welcome to ${var.ex-list[0]} ${var.ex-list[1]} Training and the total course duration is ${var.ex-list[2]} and the trainer name is ${var.ex-list[3]}"
 }
 
 
