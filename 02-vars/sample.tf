@@ -8,5 +8,5 @@ output "sample" {
 
 
 output "sample1" {
-    value 
+    value = The value that I am Printing is ${var.sample
 }
