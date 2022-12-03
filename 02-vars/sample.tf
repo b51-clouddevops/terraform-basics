@@ -26,6 +26,10 @@ variable "ex-list" {
   default = [
     "Cloud",
     "DevOps",
+    100,
+    false,
+    "Verma",
+    "SRE"
   ]
 }
 
