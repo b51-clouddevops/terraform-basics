@@ -8,6 +8,8 @@ output "sample" {
 
 
 output "sample1" {
-    value = "The value that I am Printing is "{var.sample}"
+    value = "The value that I am Printing is {var.sample}"
 }
 
+
+# A variable can be accessed without ${} only the variable is called.
