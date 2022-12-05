@@ -6,3 +6,7 @@ resource "aws_instance" "web" {
     Name = "HelloWorld"
   }
 }
+
+output "private_ip" {
+    value   =   
+}
