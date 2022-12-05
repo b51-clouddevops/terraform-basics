@@ -42,7 +42,8 @@ variable "ex-map" {
     default = {
         Duration = 105 
         Timing   = "0730AMIST"
-        BATCH    = 51 
+        Batch    = 51 
+        Trainer 
         
     }
   
