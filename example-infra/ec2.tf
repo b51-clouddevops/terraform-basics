@@ -1,4 +1,4 @@
-resource "aws_instance" "web" {
+resource "aws_instance" "app" {
   ami           = "ami-0fa1ba08307b907ac"
   instance_type = "t3.micro"
 
@@ -8,5 +8,5 @@ resource "aws_instance" "web" {
 }
 
 output "private_dns" {
-    value   =   aws_instance.web.private_dns
+    value   =   aws_instance.app.private_dns
 }
