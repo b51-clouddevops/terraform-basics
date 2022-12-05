@@ -48,7 +48,9 @@ variable "ex-map" {
     }
 }
 
-output "e"
+output "ex-map" {
+    value = "Wlcome to batch ${av}"
+}
 
 
 # A variable can be accessed without ${} only the variable is called. In case, if it's needed to be added with other strings or in between something, then we need to enclose them in
