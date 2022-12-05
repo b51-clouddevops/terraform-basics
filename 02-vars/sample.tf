@@ -49,7 +49,7 @@ variable "ex-map" {
 }
 
 output "ex-map" {
-    value = "Wlcome to batch ${av}"
+    value = "Wlcome to batch ${var.ex-map["Batch"]} and the sessions timings are ${var.}"
 }
 
 
