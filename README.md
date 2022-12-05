@@ -11,6 +11,8 @@ If you supply any file apart from terraform.tfvars , you need to specify the nam
 
 Arguments are the build blocks of the resources that you wish to create, which are like the properties to be used to create instance.
     
-    ``` AMI to use , Security Group To Use, Network To Use``` 
+    EX: ``` AMI to use , Security Group To Use, Network To Use``` 
 
-Attributes
+Attributes are the properties which can only be see once the resource is provisioned.
+
+    Ex: ```
