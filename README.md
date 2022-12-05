@@ -16,3 +16,8 @@ Arguments are the build blocks of the resources that you wish to create, which a
 Attributes are the properties which can only be see once the resource is provisioned.
 
     Ex: ``` Instance ID, Private IP, Public IP```
+
+Depends on the type of changes, terraform change can be either
+    --> Concurrent
+    --> Disruptive
+    --> Destroy and recreate
