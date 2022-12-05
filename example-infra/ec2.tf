@@ -7,6 +7,6 @@ resource "aws_instance" "web" {
   }
 }
 
-output "private_ip" {
+output "private_dns" {
     value   =   aws_instance.web.private_dns
 }
