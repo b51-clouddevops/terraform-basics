@@ -15,4 +15,4 @@ Arguments are the build blocks of the resources that you wish to create, which a
 
 Attributes are the properties which can only be see once the resource is provisioned.
 
-    Ex: ```
+    Ex: ``` Instance ID, Private IP, Public IP```
