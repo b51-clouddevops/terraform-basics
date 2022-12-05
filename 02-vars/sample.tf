@@ -21,7 +21,6 @@ output "number" {
 
 
 # List Variable 
-
 variable "ex-list" {
   default = [
     "Cloud",
