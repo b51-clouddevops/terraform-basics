@@ -1,3 +1,4 @@
+# Creates EC2 Instance 
 resource "aws_instance" "app" {
   ami           = "ami-0fa1ba08307b907ac"
   instance_type = "t3.micro"
@@ -7,13 +8,14 @@ resource "aws_instance" "app" {
   }
 }
 
+# Shows output on the screen
 output "private_dns" {
     value   =   aws_instance.app.private_dns
 }
 
 # Creates Security Group
-resource "aws_security_group" "allow_tls" {
-  name        = "allow_tls"
+resource "aws_security_group" "allow_all" {
+  name        = "allow_all"
   description = "Allow TLS inbound traffic"
   vpc_id      = aws_vpc.main.id
 
@@ -22,8 +24,8 @@ resource "aws_security_group" "allow_tls" {
     from_port        = 443
     to_port          = 443
     protocol         = "tcp"
-    cidr_blocks      = [aws_vpc.main.cidr_block]
-    ipv6_cidr_blocks = [aws_vpc.main.ipv6_cidr_block]
+    cidr_blocks      = [0.0.0.0/0]
+
   }
 
   egress {
