@@ -9,4 +9,8 @@ If you supply any file apart from terraform.tfvars , you need to specify the nam
 
 ### Arguments and Attributes in terraform
 
-Arguments are the build blocks of the resources that you wish to create
+Arguments are the build blocks of the resources that you wish to create, which are like the properties to be used to create instance.
+    
+    ``` AMI to use , Security Group To Use, Network To Use``` 
+
+Attributes
