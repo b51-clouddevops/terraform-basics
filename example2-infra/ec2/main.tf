@@ -9,7 +9,7 @@ resource "aws_instance" "app" {
     command = <<EOF  
 sleep 60 
 cd /home/centos/ansible
-ansible-playbook -i publi
+ansible-playbook -i publicIPOfTheMachine  -e ansible_user=centos -e ansible_password=DevOps321 -e ENV=dev 
 
 
 EOF  
