@@ -1,5 +1,5 @@
 # Request a spot instance at $0.03
-resource "aws_spot_instance_request" "cheap_worker" {
+resource "aws_spot_instance_request" "spot" {
   ami                          = "data.aws_ami.myami.image_id"
   instance_type                = "t3.micro"
   wait_for_fulfillment         = true
