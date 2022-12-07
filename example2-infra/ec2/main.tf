@@ -13,7 +13,7 @@ resource "aws_instance" "app" {
 
   provisioner "remote-exec" {
     inline = [
-      "ansible-pull -U "
+      "ansible-pull -U https://github.com/b51-clouddevops/ansible.git -e ansible_user=centos -e ansible_password=DevOps321 -e COMPONENT=catalogue -e APP_VERSION=0.0.2 -e ENV=dev roboshop-pull.yml"
 
     ]
   }
