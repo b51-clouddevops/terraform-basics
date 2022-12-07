@@ -6,7 +6,9 @@ resource "aws_instance" "app" {
 
 
   provisioner "local-exec" {
-    command = <<EOF 
+    command = <<EOF  
+sleep 60 
+cd /home/centos/ansible 
 
 
 EOF  
