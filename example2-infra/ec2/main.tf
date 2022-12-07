@@ -5,11 +5,11 @@ resource "aws_instance" "app" {
   vpc_security_group_ids     = [var.sg]
 
 
-  provisioner "local-exec" {
+provisioner "local-exec" {
     command = <<EOF  
 sleep 60 
 cd /home/centos/ansible
-ansible-playbook -i   -e ansible_user=centos -e ansible_password=DevOps321 -e ENV=dev COMPONENT=mongodb roboshop.yaml
+ansible-playbook -i self.private_ip  -e ansible_user=centos -e ansible_password=DevOps321 -e ENV=dev COMPONENT=mongodb roboshop.yaml
 EOF  
 
   }
