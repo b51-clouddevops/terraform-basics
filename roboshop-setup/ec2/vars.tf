@@ -12,8 +12,17 @@ variable "ALL_COMPONENTS" {
         },
 
         redis   =  {
+            app_version  =  "null"
+        },
+
+        cart   =  {
             app_version  =  "0.0.2"
         },
+
+        user   =  {
+            app_version  =  "0.0.2"
+        },
+
 
 
     }
