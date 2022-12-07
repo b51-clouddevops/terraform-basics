@@ -44,6 +44,10 @@ resource "aws_instance" "app" {
     ]
   }
 
+  tags = {
+    Name = "${var.COMPONENT}-robot"
+  }
+
 }
 
 
