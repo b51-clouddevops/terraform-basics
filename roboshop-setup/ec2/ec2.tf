@@ -3,7 +3,7 @@ resource "aws_spot_instance_request" "cheap_worker" {
   ami                          = "data.aws_ami.myami.image_id"
   instance_type                = "t3.micro"
   wait_for_fulfillment         = true
-    vpc_security_group_ids     = []
+ vpc_security_group_ids     = [aws_security_group.allows_ssh]
 
   tags = {
     Name = var.COMPONENT
