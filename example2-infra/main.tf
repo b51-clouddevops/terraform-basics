@@ -6,4 +6,5 @@ module "sg" {
     source = "./sg"
 }
 
-output 
+# Taking the output to this root module from the sg sub-module 
+output  
