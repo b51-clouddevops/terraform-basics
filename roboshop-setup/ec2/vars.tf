@@ -32,7 +32,11 @@ variable "ALL_COMPONENTS" {
         },
 
         rabbitmq   =  {
-            app_version  =  "0.0.1"
+            app_version  =  "null"
+        },
+
+        payment   =  {
+            app_version  =  "0.0.2"
         },
 
     }
