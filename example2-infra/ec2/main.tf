@@ -6,9 +6,9 @@ resource "aws_instance" "app" {
 
   connection {
     type     = "ssh"
-    user     = "root"
-    password = var.root_password
-    host     = self.public_ip
+    user     = "centos"
+    password = "DevOps321"
+    host     = self.private_ip
   }
 
   provisioner "remote-exec" {
