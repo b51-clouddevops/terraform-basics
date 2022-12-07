@@ -23,7 +23,17 @@ variable "ALL_COMPONENTS" {
             app_version  =  "0.0.2"
         },
 
+        mysql   =  {
+            app_version  =  "null"
+        },
 
+        shipping   =  {
+            app_version  =  "0.0.1"
+        },
+
+        rabbitmq   =  {
+            app_version  =  "0.0.1"
+        },
 
     }
 }
