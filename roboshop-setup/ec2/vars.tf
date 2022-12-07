@@ -6,5 +6,15 @@ variable "ALL_COMPONENTS" {
         mongo   =  {
             app_version  =  "null"
         },
+
+        catalogue   =  {
+            app_version  =  "0.0.2"
+        },
+
+        redis   =  {
+            app_version  =  "0.0.2"
+        },
+
+
     }
 }
