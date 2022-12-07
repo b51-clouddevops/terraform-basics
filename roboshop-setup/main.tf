@@ -1,3 +1,10 @@
+module "component" {
+    source      =   "./ec2"
+    COMPONENT   =   ????
+    APP_VERSION =   ????
+}
+
+
 # module "mongodb" {
 #     source      =   "./ec2"
 #     COMPONENT   =   "mongodb"
