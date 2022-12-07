@@ -3,16 +3,6 @@ resource "aws_instance" "app" {
   ami                        = data.aws_ami.myami.image_id
   instance_type              = "t3.micro"
   vpc_security_group_ids     = [var.sg]
-
-
-provisioner "local-exec" {
-    command = <<EOF  
-sleep 60 
-cd /home/centos/ansible
-ansible-playbook -i self.private_ip  -e ansible_user=centos -e ansible_password=DevOps321 -e ENV=dev COMPONENT=mongodb roboshop.yaml
-EOF  
-
-  }
 }
 
 
