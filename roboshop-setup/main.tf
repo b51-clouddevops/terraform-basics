@@ -1,8 +1,12 @@
-
-
 module "mongodb" {
     source      =   "./ec2"
     COMPONENT   =   "mongodb"
+    APP_VERSION =   "0.0.2"
+}
+
+module "catalogue" {
+    source      =   "./ec2"
+    COMPONENT   =   "catalogue"
     APP_VERSION =   "0.0.2"
 }
 
@@ -12,11 +16,7 @@ module "cart" {
     APP_VERSION =   "0.0.2"
 }
 
-module "catalogue" {
-    source      =   "./ec2"
-    COMPONENT   =   "catalogue"
-    APP_VERSION =   "0.0.2"
-}
+
 
 module "shipping" {
     source      =   "./ec2"
@@ -30,19 +30,19 @@ module "user" {
     APP_VERSION =   "0.0.2"
 }
 
-module "catalogue" {
+module "payment" {
     source      =   "./ec2"
-    COMPONENT   =   "catalogue"
+    COMPONENT   =   "payment"
     APP_VERSION =   "0.0.2"
 }
 
-module "shipping" {
+module "rabbitmq" {
     source      =   "./ec2"
-    COMPONENT   =   "shipping"
+    COMPONENT   =   "rabbitmq"
     APP_VERSION =   "0.0.2"
 }
 
-module "user" {
+module "mysql" {
     source      =   "./ec2"
     COMPONENT   =   "user"
     APP_VERSION =   "0.0.2"
