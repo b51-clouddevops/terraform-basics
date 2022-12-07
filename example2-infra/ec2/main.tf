@@ -9,7 +9,7 @@ resource "aws_instance" "app" {
     command = <<EOF 
 
 
-EOF 
+EOF  
   }
 
   tags = {
