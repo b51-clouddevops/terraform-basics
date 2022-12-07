@@ -13,8 +13,8 @@ resource "aws_instance" "app" {
 
   provisioner "remote-exec" {
     inline = [
-      "puppet apply",
-      "consul join ${aws_instance.web.private_ip}",
+      "",
+
     ]
   }
 
