@@ -1,6 +1,5 @@
 data "aws_ami" "example" {
-  executable_users = ["self"]
   most_recent      = true
-  name_regex       = "^myami-\\d{3}"
+  name_regex       = "b51-ansible-base"
   owners           = ["self"]
 }
