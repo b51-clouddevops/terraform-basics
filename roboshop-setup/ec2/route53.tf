@@ -1,7 +1,7 @@
 resource "aws_route53_record" "component" {
-  zone_id = ""
-  name    = "www.example.com"
+  zone_id = "Z00636481OT8FNJLH82AQ"
+  name    = "${var.COMPONENT}-dev.robot.internal"
   type    = "A"
-  ttl     = 300
+  ttl     = 10
   records = [aws_eip.lb.public_ip]
 }
