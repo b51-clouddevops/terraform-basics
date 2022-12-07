@@ -12,6 +12,6 @@ module "mongodb" {
 
 module "cart" {
     source      =   "./ec2"
-    COMPONENT   =   "mongodb"
+    COMPONENT   =   "cart"
     APP_VERSION =   "0.0.2"
 }
