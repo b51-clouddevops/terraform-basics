@@ -9,14 +9,9 @@ resource "aws_instance" "app" {
     command = <<EOF  
 sleep 60 
 cd /home/centos/ansible
-ansible-playbook -i publicIPOfTheMachine  -e ansible_user=centos -e ansible_password=DevOps321 -e ENV=dev 
-
+ansible-playbook -i publicIPOfTheMachine  -e ansible_user=centos -e ansible_password=DevOps321 -e ENV=dev COMPONENT=mongodb roboshop.yaml
 
 EOF  
-  }
-
-  tags = {
-    Name = "MyFirstTerraformInstance"
   }
 }
 
