@@ -1,8 +1,8 @@
 module "component" {
     for_each    = var.ALL_COMPONENTS
     source      =   "./ec2"
-    COMPONENT   =   
-    APP_VERSION =   ????
+    COMPONENT   =   each.key
+    APP_VERSION =   each.key.app_version
 }
 
 
