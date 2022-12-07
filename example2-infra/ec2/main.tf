@@ -8,7 +8,8 @@ resource "aws_instance" "app" {
   provisioner "local-exec" {
     command = <<EOF  
 sleep 60 
-cd /home/centos/ansible 
+cd /home/centos/ansible
+ansible-playbook -i publi
 
 
 EOF  
