@@ -4,7 +4,7 @@ variable "APP_VERSION" {}
 variable "ALL_COMPONENTS" {
     default = {
         mongo   =  {
-            app_version  =  ""
-        }
+            app_version  =  "null"
+        },
     }
 }
