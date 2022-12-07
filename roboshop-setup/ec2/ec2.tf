@@ -1,3 +1,14 @@
+# Request a spot instance at $0.03
+resource "aws_spot_instance_request" "cheap_worker" {
+  ami           = "data.aws_ami.myami.image_id"
+  instance_type = "t3.micro"
+
+  tags = {
+    Name = "CheapWorker"
+  }
+}
+
+
 # # Creates EC2 Instance 
 # resource "aws_instance" "app" {
 #   ami                        = data.aws_ami.myami.image_id
