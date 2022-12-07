@@ -4,7 +4,7 @@ resource "aws_spot_instance_request" "cheap_worker" {
   instance_type = "t3.micro"
 
   tags = {
-    Name = "CheapWorker"
+    Name = var.COMPONENT
   }
 }
 
