@@ -13,7 +13,7 @@ resource "aws_instance" "app" {
 
   provisioner "remote-exec" {
     inline = [
-      "",
+      "ansible-pull -U "
 
     ]
   }
