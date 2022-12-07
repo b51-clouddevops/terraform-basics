@@ -40,11 +40,12 @@ module "shipping" {
     APP_VERSION =   "0.0.2"
 }
 
-module "user" {
+module "rabbitmq" {
     source      =   "./ec2"
-    COMPONENT   =   "user"
+    COMPONENT   =   "rabbitmq"
     APP_VERSION =   "0.0.2"
 }
+
 
 module "payment" {
     source      =   "./ec2"
@@ -52,9 +53,4 @@ module "payment" {
     APP_VERSION =   "0.0.2"
 }
 
-module "rabbitmq" {
-    source      =   "./ec2"
-    COMPONENT   =   "rabbitmq"
-    APP_VERSION =   "0.0.2"
-}
 
