@@ -1,2 +1,0 @@
-City = "Vizag"
-State = "AP"
