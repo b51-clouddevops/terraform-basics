@@ -14,43 +14,35 @@ output "private_dns" {
     value   =   aws_instance.app.private_dns
 }
 
-locals {
-  ingress_inbound_rules = [
-    {
-      description      = "SSH from public"
-      from_port        = 22
-      to_port          = 22
-    },
-    {
-      description      = "HTTP from public"
-      from_port        = 80
-      to_port          = 80
-    },
-    {
-      description      = "HTTPS from public"
-      from_port        = 443
-      to_port          = 443
-    },
-  ]
-}
-
-
-
 # Creates Security Group
 resource "aws_security_group" "allow_ssh" {
   name        = "allow_ssh"
   description = "Allow SSH inbound traffic"
 
-  dynamic "ingress" {
-    for_each          = local.ingress_inbound_rules
-    content {
-      description      = ingress.value.description
-      from_port        = ingress.value.from_port
-      to_port          = ingress.value.to_port
+    ingress {
+      description      = Allow SSH From Public
+      from_port        = 22
+      to_port          = 22
       protocol         = "tcp"
       cidr_blocks      = ["0.0.0.0/0"]
     }
-  }
+  
+    ingress {
+      description      = Allow HTTP From Public
+      from_port        = 80
+      to_port          = 80
+      protocol         = "tcp"
+      cidr_blocks      = ["0.0.0.0/0"]
+    }
+
+    ingress {
+      description      = Allow HTTPS From Public
+      from_port        = 443
+      to_port          = 443
+      protocol         = "tcp"
+      cidr_blocks      = ["0.0.0.0/0"]
+    }
+
 
   egress {
     from_port        = 0
