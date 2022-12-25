@@ -9,33 +9,41 @@ resource "aws_instance" "app" {
   }
 }
 
+
+# Declaring a local with map variable 
+locals {
+    ingress_inbound_rules = [
+        {
+            description = "SSH from Public"
+            from_port        = 22
+            to_port          = 22
+        },
+        {
+            description = "HTTPS from Public"
+            from_port        = 443
+            to_port          = 443
+        },
+        {
+            description = "HTTP from Public"
+            from_port        = 80
+            to_port          = 80
+        }
+    ]
+}
+
 # Creates Security Group
 resource "aws_security_group" "allows_ssh" {
   name        = "allows_ssh"
   description = "Allows SSH inbound traffic"
 
-  ingress {
-    description      = "SSH from VPC"
-    from_port        = 22
-    to_port          = 22
-    protocol         = "tcp"
-    cidr_blocks      = ["0.0.0.0/0"]
-  }
+  dynamic "ingress" {
+    for_each         = ingress_inbound_rules 
 
-  ingress {
-    description      = "HTTP from Public"
-    from_port        = 80
-    to_port          = 80
-    protocol         = "tcp"
-    cidr_blocks      = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    description      = "HTTPS from Public"
-    from_port        = 443
-    to_port          = 443
-    protocol         = "tcp"
-    cidr_blocks      = ["0.0.0.0/0"]
+        description      = local.ingress_inbound_rules.description
+        from_port        = local.ingress_inbound_rules.from_port
+        to_port          = local.ingress_inbound_rules.to_port
+        protocol         = "tcp"
+        cidr_blocks      = ["0.0.0.0/0"]    
   }
 
   egress {
@@ -47,7 +55,7 @@ resource "aws_security_group" "allows_ssh" {
   }
 
   tags = {
-    Name = "allow_SSH"
+    Name = "allows_HTTP_HTTPS_SSH from internet"
   }
 }
 
