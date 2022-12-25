@@ -29,7 +29,7 @@ locals {
         {
             description      = "HTTPS from Public"
             from_port        =  443
-            to_port          =  4
+            to_port          =  443
         },
     ]
 }
@@ -40,17 +40,16 @@ resource "aws_security_group" "allow_ssh_http_https" {
   description = "Allow SSH inbound traffic"
 
   dynamic "ingress" {
-    content {
         for_each            = local.ingress_inbound_rules
-        ingress {
+        content {
             description      = ingress.value.description
             from_port        = ingress.value.from_port
             to_port          = ingress.value.to_port
             protocol         = "tcp"
             cidr_blocks      = ["0.0.0.0/0"]
-            }      
-        }
+        }      
     }
+
 
   egress {
     from_port        = 0
