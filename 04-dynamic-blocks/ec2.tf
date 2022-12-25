@@ -15,18 +15,15 @@ locals {
     ingress_inbound_rules = [
         {
             description = "SSH from Public"
-            from_port        = 22
-            to_port          = 22
+            port        = 22
         },
         {
             description = "HTTPS from Public"
-            from_port        = 443
-            to_port          = 443
+            port        = 443
         },
         {
             description = "HTTP from Public"
-            from_port        = 80
-            to_port          = 80
+            port        = 80
         }
     ]
 }
@@ -40,8 +37,8 @@ resource "aws_security_group" "allows_ssh" {
     for_each         = ingress_inbound_rules 
 
         description      = ingress.value.description
-        from_port        = ingress.value.from_port
-        to_port          = ingress.value.to_port
+        from_port        = ingress.value.port
+        to_port          = ingress.value.port
         protocol         = "tcp"
         cidr_blocks      = ["0.0.0.0/0"]    
   }
