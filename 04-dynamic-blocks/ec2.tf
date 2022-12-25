@@ -36,7 +36,7 @@ locals {
 
 # Creates Security Group
 resource "aws_security_group" "allow_ssh_http_https" {
-  name        = "allow_ssh"
+  name        = "allows_ssh_http_htts"
   description = "Allow SSH inbound traffic"
 
   dynamic "ingress" {
@@ -60,6 +60,6 @@ resource "aws_security_group" "allow_ssh_http_https" {
   }
 
   tags = {
-    Name = "allow_SSH"
+    Name = "allow_SSH_https_http"
   }
 }
