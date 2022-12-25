@@ -15,14 +15,14 @@ locals {
     ingress_inbound_rules = [
         {
             description = "SSH from Public"
-            port        = 22
-        {
+            port        = "22"
+        },
             description = "HTTPS from Public"
-            port        = 443
+            port        = "443"
         },
         {
             description = "HTTP from Public"
-            port        = 80
+            port        = "80"
         }
     ]
 }
