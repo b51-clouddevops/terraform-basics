@@ -15,15 +15,14 @@ locals {
     ingress_inbound_rules = [
         {
             description = "SSH from Public"
-            port        = "22"
-        },
+            port        = 22
         {
             description = "HTTPS from Public"
-            port        = "443"
+            port        = 443
         },
         {
             description = "HTTP from Public"
-            port        = "80"
+            port        = 80
         }
     ]
 }
@@ -34,7 +33,7 @@ resource "aws_security_group" "allows_ssh" {
   description = "Allows SSH inbound traffic"
 
   dynamic "ingress" {
-    for_each         = ingress_inbound_rules 
+    for_each         = local.ingress_inbound_rules 
 
         description      = ingress.value.description
         from_port        = ingress.value.port
