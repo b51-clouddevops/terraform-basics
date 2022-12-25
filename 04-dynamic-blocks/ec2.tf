@@ -39,9 +39,9 @@ resource "aws_security_group" "allows_ssh" {
   dynamic "ingress" {
     for_each         = ingress_inbound_rules 
 
-        description      = ingress_inbound_rules.description
-        from_port        = ingress_inbound_rules.from_port
-        to_port          = ingress_inbound_rules.to_port
+        description      = ingress.description
+        from_port        = ingress.from_port
+        to_port          = ingress.to_port
         protocol         = "tcp"
         cidr_blocks      = ["0.0.0.0/0"]    
   }
